@@ -2,257 +2,88 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Career Portal — Guidance, Colleges & Assessment</title>
-
-    <!-- Link to external CSS file -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delicious Recipes</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <!-- 🌐 NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">🍴 Delicious Recipes</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- TOP NAV BAR -->
-    <header class="topbar">
-        <div class="brand" onclick="navigate('home')">CareerPortal</div>
-        <nav class="nav">
-            <button class="nav-btn" onclick="navigate('home')">Home</button>
-            <button class="nav-btn" onclick="navigate('careers')">Careers</button>
-            <button class="nav-btn" onclick="navigate('colleges')">Colleges</button>
-            <button class="nav-btn" onclick="navigate('courses')">Courses</button>
-            <button class="nav-btn" onclick="navigate('assessment')">Assessment</button>
-            <button class="nav-btn" onclick="navigate('dashboard')">Dashboard</button>
-            <button id="authBtn" class="nav-btn" onclick="openAuth()">Login / Register</button>
-        </nav>
-        <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+    <!-- 🏠 HOME SECTION -->
+    <header id="home">
+        <h1>Discover Delicious Recipes</h1>
+        <p>Explore your favorite dishes and learn how to cook them easily!</p>
     </header>
 
-    <!-- MOBILE NAV (hidden on desktop) -->
-    <div id="mobileMenu" class="mobile-menu" style="display:none">
-        <button onclick="navigate('home')">Home</button>
-        <button onclick="navigate('careers')">Careers</button>
-        <button onclick="navigate('colleges')">Colleges</button>
-        <button onclick="navigate('courses')">Courses</button>
-        <button onclick="navigate('assessment')">Assessment</button>
-        <button onclick="navigate('dashboard')">Dashboard</button>
-        <button onclick="openAuth()">Login / Register</button>
-    </div>
+    <!-- 🔎 SEARCH + FILTER -->
+    <section class="search-filter" id="categories">
+        <input type="text" id="searchInput" placeholder="🔍 Search recipes..." />
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="veg">Vegetarian</option>
+            <option value="nonveg">Non-Veg</option>
+            <option value="dessert">Dessert</option>
+            <option value="quick">Quick Meals</option>
+        </select>
+        <button id="theme-toggle">🌞</button>
+    </section>
 
-    <!-- PAGES (single HTML, show/hide by JS) -->
+    <!-- 🍽️ RECIPE GALLERY -->
+    <main>
+        <section class="recipe-gallery" id="recipeGallery"></section>
 
-    <!-- HOME -->
-    <main id="home" class="page">
-        <section class="hero">
-            <div class="hero-left">
-                <h1>Find the career that fits you</h1>
-                <p>Explore careers, discover colleges, take the assessment and build your future.</p>
-                <div class="hero-actions">
-                    <button onclick="navigate('careers')">Explore Careers</button>
-                    <button onclick="navigate('assessment')" class="outline">Take Assessment</button>
-                </div>
-            </div>
-            <div class="hero-right">
-                <img class="logo-img" alt="career illustration" src="https://res.cloudinary.com/dvrblc9r4/image/upload/v1764090510/logo_l7nnwr.jpg" aria-hidden="true" />
-            </div>
-        </section>
-
-        <section class="quick-cards">
-            <div class="card">
-                <h3>Personalized Guidance</h3>
-                <p>Get career suggestions based on interests and strengths.</p>
-            </div>
-            <div class="card">
-                <h3>Top Colleges</h3>
-                <p>Explore colleges mapped to careers and courses.</p>
-            </div>
-            <div class="card">
-                <h3>Assessment Test</h3>
-                <p>15 MCQs to find your best-fit fields.</p>
-            </div>
+        <!-- ❤️ FAVOURITES SECTION -->
+        <section id="favourites">
+            <h2>⭐ Your Favourite Recipes</h2>
+            <div id="favouriteGallery" class="recipe-gallery"></div>
         </section>
     </main>
 
-    <!-- CAREERS -->
-    <section id="careers" class="page" style="display:none">
-        <div class="page-header">
-            <h2>Careers</h2>
-            <div class="controls">
-                <input id="careerSearch" placeholder="Search careers..." oninput="filterCareers()" />
-                <select id="careerCategory" onchange="filterCareers()">
-                    <option value="all">All fields</option>
-                    <option value="tech">Technology</option>
-                    <option value="medical">Medical</option>
-                    <option value="design">Design</option>
-                    <option value="law">Law</option>
-                    <option value="business">Business</option>
-                    <option value="defence">Defence</option>
-                    <option value="aviation">Aviation</option>
-                    <option value="teaching">Teaching</option>
-                    <option value="arts">Arts</option>
-                    <option value="finance">Finance</option>
-                    <option value="govt">Government</option>
-                </select>
-            </div>
-        </div>
-
-        <div id="careerGrid" class="grid"></div>
+    <!-- 🧾 ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>
+            Welcome to Delicious Recipes — your ultimate destination for exploring mouth-watering dishes.
+            We bring you simple, step-by-step recipes to make cooking fun and easy.
+        </p>
     </section>
 
-    <!-- CAREER DETAILS -->
-    <section id="careerDetails" class="page" style="display:none">
-        <button class="back" onclick="navigate('careers')">← Back to Careers</button>
-        <div class="details-card" id="careerDetailCard">
-            <!-- Filled by JS -->
+    <!-- 📩 CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:info@deliciousrecipes.com">info@deliciousrecipes.com</a></p>
+        <p>Follow us on Instagram: <a href="#">@deliciousrecipes</a></p>
+    </section>
+
+    <!-- 🍲 POPUP RECIPE DETAILS -->
+    <section id="recipe-details" class="hidden">
+        <div class="recipe-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="recipe-title"></h2>
+            <img id="recipe-image" src="" alt="" />
+            <button id="favourite-btn">❤️ Add to Favourites</button>
+            <h3>Ingredients:</h3>
+            <ul id="recipe-ingredients"></ul>
+            <h3>Instructions:</h3>
+            <ol id="recipe-instructions"></ol>
         </div>
     </section>
 
-    <!-- COLLEGES -->
-    <section id="colleges" class="page" style="display:none">
-        <div class="page-header">
-            <h2>Colleges</h2>
-            <div class="controls">
-                <input id="collegeSearch" placeholder="Search colleges..." oninput="filterColleges()" />
-                <select id="collegeFilter" onchange="filterColleges()">
-                    <option value="all">All types</option>
-                    <option value="engineering">Engineering</option>
-                    <option value="medical">Medical</option>
-                    <option value="design">Design</option>
-                    <option value="business">Business</option>
-                    <option value="law">Law</option>
-                    <option value="general">General University</option>
-                    <option value="private">Private</option>
-                    <option value="research">Research</option>
-                </select>
-
-                <select id="collegeStateFilter" onchange="filterColleges()">
-                    <option value="all">All States</option>
-                    <!-- JS populates state options -->
-                </select>
-            </div>
-        </div>
-
-        <div id="collegeGrid" class="grid"></div>
-
-        <!-- pagination -->
-        <div id="collegePagination" class="pagination"></div>
-    </section>
-
-    <!-- COURSES -->
-    <section id="courses" class="page" style="display:none">
-        <div class="page-header">
-            <h2>Courses</h2>
-            <div class="controls">
-                <input id="courseSearch" placeholder="Search courses..." oninput="filterCourses()" />
-                <select id="courseFilter" onchange="filterCourses()">
-                    <option value="all">All</option>
-                    <option value="ug">Undergraduate</option>
-                    <option value="pg">Postgraduate</option>
-                    <option value="diploma">Diploma</option>
-                    <option value="certificate">Certificate</option>
-                </select>
-            </div>
-        </div>
-
-        <div id="courseGrid" class="grid"></div>
-    </section>
-
-    <!-- ASSESSMENT -->
-    <section id="assessment" class="page" style="display:none">
-        <div class="page-header">
-            <h2>Self-Assessment — 15 Questions</h2>
-            <p>Answer honestly — results are saved to your account.</p>
-        </div>
-
-        <form id="assessmentForm" class="assessment-form" onsubmit="return false;">
-            <!-- JS will render questions here -->
-        </form>
-
-        <div class="assessment-actions">
-            <button onclick="submitAssessment()">Submit</button>
-            <button class="outline" onclick="resetAssessment()">Reset Answers</button>
-        </div>
-
-        <div id="assessmentResult" class="result-box" style="display:none"></div>
-    </section>
-
-    <!-- DASHBOARD -->
-    <section id="dashboard" class="page" style="display:none">
-        <div class="page-header">
-            <h2>Your Dashboard</h2>
-            <div id="userWelcome"></div>
-        </div>
-
-        <div class="dash-grid">
-            <div class="card">
-                <h3>Saved Favorites</h3>
-                <div id="favList">No favorites yet.</div>
-            </div>
-            <div class="card">
-                <h3>Assessment History</h3>
-                <div id="historyList">No attempts yet.</div>
-            </div>
-            <div class="card">
-                <h3>Account</h3>
-                <div id="accountInfo"></div>
-                <button onclick="logout()">Logout</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- AUTH MODAL (login/register) -->
-    <div id="authModal" class="modal" style="display:none">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeAuth()">✕</button>
-
-            <div id="authTabs">
-                <button class="tab-btn active" onclick="openAuthTab('loginTab')">Login</button>
-                <button class="tab-btn" onclick="openAuthTab('registerTab')">Register</button>
-            </div>
-
-            <!-- LOGIN -->
-            <div id="loginTab" class="auth-tab">
-                <h3>Login</h3>
-                <input id="login_email" placeholder="Email" />
-                <input id="login_pass" placeholder="Password" type="password" />
-                <div class="form-actions">
-                    <button onclick="doLogin()">Login</button>
-                </div>
-            </div>
-
-            <!-- REGISTER -->
-            <div id="registerTab" class="auth-tab" style="display:none">
-                <h3>Create an account</h3>
-                <input id="reg_name" placeholder="Full name" />
-                <input id="reg_email" placeholder="Email" />
-                <input id="reg_pass" placeholder="Password" type="password" />
-                <label class="small">Select fields you like (choose multiple if you want)</label>
-                <div class="checkbox-row">
-                    <label><input type="checkbox" value="tech" class="interest"> Technology</label>
-                    <label><input type="checkbox" value="medical" class="interest"> Medical</label>
-                    <label><input type="checkbox" value="design" class="interest"> Design</label>
-                    <label><input type="checkbox" value="business" class="interest"> Business</label>
-                    <label><input type="checkbox" value="law" class="interest"> Law</label>
-                    <label><input type="checkbox" value="arts" class="interest"> Arts</label>
-                </div>
-                <div class="form-actions">
-                    <button onclick="doRegister()">Register</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div>© <span id="year"></span> CareerPortal — Made for frontend project</div>
-        <div class="footer-links">
-            <a href="#" onclick="navigate('home')">Home</a>
-            <a href="#" onclick="navigate('careers')">Careers</a>
-            <a href="#" onclick="navigate('colleges')">Colleges</a>
-        </div>
+    <footer>
+        <p>© 2025 Delicious Recipes | Made with ❤️ by Akriti</p>
     </footer>
 
-    <!-- Link to external JS file -->
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
