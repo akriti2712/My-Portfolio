@@ -51,5 +51,3 @@ personal-portfolio/
 ## 👩‍💻 Author
 
 Akriti Srivastav (Frontend Developer)
-
-akritisrivastav3061@gmailcom
