@@ -29,11 +29,17 @@ This project showcases personal details, skills, projects, and contact informati
 ## 📁 Project Structure
 
 personal-portfolio/
+
 │
+
 ├── index.html # Main HTML file
+
 ├── style.css # CSS styling
+
 ├── script.js # JavaScript functionality
+
 └── README.md # Project documentation
+
 
 ## 📸 Screenshots
 <img width="1366" height="768" alt="Screenshot (29)" src="https://github.com/user-attachments/assets/a685c69f-6677-498c-9ecb-f32f186d2ba9" />
@@ -45,4 +51,5 @@ personal-portfolio/
 ## 👩‍💻 Author
 
 Akriti Srivastav (Frontend Developer)
+
 akritisrivastav3061@gmailcom
